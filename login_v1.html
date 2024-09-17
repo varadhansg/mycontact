@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+
+  <style>
+
+  .fixed{
+
+  color:red;
+  position: relative;
+  top: 100;
+  right: 100;
+
+  //border: 3px solid #73AD21;
+
+
+  }
+
+  .dimmer{opacity:0.5;}
+
+  pre{  
+  //color: #f2f2f2;
+  }
+
+ #opa{
+ opacity:1;
+ font-size:20px;
+ }
+
+
+  h1 {font-family:verdana;color:blue;} 
+
+  .red{ color:red; }
+
+  .con{
+		  margin:auto;
+		  font-family:verdana;
+		  color:;
+		  width: 50%;
+		  background-color:purpl;
+		  text-align:center;
+  }
+
+  #caplocktext{display:none;color:red}
+
+#notnow{display:none;color:red}
+  
+  </style> 
+
+
+
+  <script src="toUp.js"></script>
+
+				<script>
+
+				
+					
+				var count =1;
+				var max = 3;
+				function validate(){
+				var v = document.getElementById("name").value;
+						if(v =="VARAD"){
+						return true;
+						}
+						else{	      
+						document.getElementById("mess").innerHTML ="invalid password   "+"["+"Attempt:"+count+"]";
+						document.getElementById("clear").disabled=false;
+						count+=1;
+						max=max-1;
+						//alert(count);
+
+						if(count>4){							
+								document.getElementById("sub").disabled=true;
+								document.getElementById("notnow").style.display = "block"; 
+								document.getElementById("mess").innerHTML="";
+								document.getElementById("clear").disabled=true;
+							}
+
+
+						return false;
+						}
+
+						
+						
+			   }
+
+	  
+
+				function clr(){
+				document.getElementById("name").value="";
+				document.getElementById("mess").innerHTML="pls try again...";
+				document.getElementById("clear").disabled=false;
+			    setTimeout(msg, 3000);
+				}
+
+				function msg(){
+				 document.getElementById("mess").innerHTML = max+" : more change remaining...";
+				}
+
+
+				function loadAgain(){
+					location.reload();
+				}
+
+				function show(){
+					  var x = document.getElementById("name");
+					   var xx = document.getElementById("but");
+					  
+					  if (x.type === "password") {
+					  x.type = "text";
+					  xx.innerHTML = "hide password";
+					  xx.style.color="red";					  
+					  }
+					  else {
+					  x.type = "password";
+					  xx.innerHTML = "show password";
+					  xx.style.color="green";			
+					  
+					  }	  
+						
+
+
+				} 
+
+				function toUpper(){											 
+							let x = document.getElementById("name"); 
+							x.value = x.value.toUpperCase();
+							document.getElementById("name").style.backgroundColor = "white"; 							
+							}
+
+				
+					function caplock(event){				
+					
+						if (event.getModifierState("CapsLock"))
+							document.getElementById("caplocktext").style.display = "block";  		  
+						 else 
+							 document.getElementById("caplocktext").style.display = "none"; 			    
+					}
+function bg(){
+document.getElementById("name").style.backgroundColor = "lightgreen"; 
+}
+						
+
+					
+				
+  </script>
+ </head>
+
+ <body>
+ <div class="con">
+				<h1>varadharajan's time-line</h1>
+						file created on 5:09 am 13/8/2024 <br><br>					
+
+			  <div>
+			  			<p id="notnow"><i>You have exceeded the maximum number 
+						of</i> "LOGIN ATTEMPTS" <i> for this session. Please try again later</i></p>
+			  
+					  <form name="login" action="D:\VARAD"  onSubmit="return validate();" target="_blank" >					
+					   Enter your password<br>
+					   <span id="mess" class="red"></span><br>	
+					   
+			<input type="password" name="nam" id="name" autofocus				onkeyup="toUpper();caplock(event)"   onkeydown="bg()"/>
+			<span id="caplocktext">Warning!...Caps Lock</span><br>
+			
+					  <input type="submit" value="submit" id="sub"/>		
+					  </form>
+
+					 
+			  </div>
+				
+			  <br>
+			  <button onclick="show()" id="but" style="color:green">Show Password</button><br><br>
+			  <button onclick="clr()" disabled id="clear">clear</button>
+			  <button onclick="loadAgain()">loadAgain</button>
+			
+			  
+  </div>
+
+    
+<div style="text-align:center">
+<p id="demo">date</p>
+</div>
+	<script>
+const d = new Date();
+document.getElementById("demo").innerHTML ="Page Generated on: "+ d.toLocaleString();
+</script>
+
+<p style="font-family:verdana;font-size:20px;color:red;text-align:center">
+Domestic violence is not a <br>private matter and must not be tolerated
+</p>
+
+
+
+<div class="fixed">
+DARK<input type="range" min="1" max="10" value="1" id="sinceSlider" />LIGHT<br><br>
+SMALL<input type="range" min="12" max="24" value="12" id="sinceSlider2" />LARGER
+</div>
+
+<p id="sinces">ON THE SCENE SINCE 1972<br>
+DARK MATTER<br>
+BLACK HOLE</p>
+
+<script>
+var slider = document.getElementById('sinceSlider');
+
+var slider2 = document.getElementById('sinceSlider2');
+
+slider2.addEventListener('input', 
+
+function() {
+  
+    var size = slider2.value;  	
+   document.getElementById("since").style.fontSize =size+ "px";
+   //document.getElementById("since2").style.color =red;
+}
+
+);
+
+slider.addEventListener('input', 
+
+function() {
+   	var full = 1;
+    var size = slider.value;	
+	var op =full/size;
+    // this sets the body's font size property, but you can set whatever you need to
+    document.getElementById("since").style.opacity = op;
+	  //document.getElementById("since").style.fontSize = (size+4)+"px";
+    // this sets the body's font size property, but you can set whatever you need to	
+}
+
+);
+</script>
+
+
+
+
+<pre id="since">
+CAT Clear Air Turbulance
+Weather Radar
+important quotes
+
+Life-Long learning/learner
+
+சிலை செதுக்குதல் (அ )
+ தேவையில்லா பகுதிகளை ஒதுக்குதல் (நீக்குதல்)
+
+"ஒரு செயலை தொடர்ந்து செய்யாவிட்டால், 
+மூளை அச் செயலை செய்ய மறக்க ஆரம்பிக்கும். 
+உதாரணமாக
+நாம் தொடர்ந்து நடக்காவிட்டால், 
+நம் மூளை நமக்கு  கால்கள் இருப்பதை மறந்து விடும்."
+
+
+<pre>
+
+
+ </body>
+</html>
